@@ -7,7 +7,7 @@
     <groupId>cn.enilu</groupId>
     <artifactId>linjiashop</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <modules>
         <module>linjiashop-core</module>
         <module>linjiashop-generator</module>
