@@ -1,4 +1,4 @@
-package cn.enilu.flash.api.controller;
+package cn.enilu.flash.api.controller.common;
 
 import cn.enilu.flash.bean.entity.shop.ShopUser;
 import cn.enilu.flash.bean.entity.system.FileInfo;
