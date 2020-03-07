@@ -21,13 +21,18 @@ public class WeChatController {
      * echostr   微信端发来的验证字符串
      */
     @GetMapping(value = "/sign")
-    public String validate(@RequestParam(value = "signature", required = false) String signature,
-                           @RequestParam(value = "timestamp", required = false) String timestamp,
-                           @RequestParam(value = "nonce", required = false) String nonce,
-                           @RequestParam(value = "echostr", required = false) String echostr) {
+    public String validate(@RequestParam(value = "signature") String signature,
+                           @RequestParam(value = "timestamp") String timestamp,
+                           @RequestParam(value = "nonce") String nonce,
+                           @RequestParam(value = "echostr") String echostr) {
         log.info("微信进行签名的验证 signature:{}, timestamp:{}, nonce:{}, echostr:{}", signature, timestamp, nonce, echostr);
         String s = SignatureUtil.check(signature, timestamp, nonce) ? echostr : null;
         log.info("微信进行签名的验证 s:{}", s);
+        return echostr;
+    }
+
+    @GetMapping(value = "/sign2")
+    public String validate2(@RequestParam(value = "echostr") String echostr) {
         return echostr;
     }
 }
