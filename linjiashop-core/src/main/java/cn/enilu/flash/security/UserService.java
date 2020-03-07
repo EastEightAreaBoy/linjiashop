@@ -94,6 +94,7 @@ public class UserService {
         }
         //构建前台用户认证信息
         if(userType == JwtUser.FRONT_USER){
+            //todo
             ShopUser user = shopUserRepository.findByMobile(account);
             userBean.setId(user.getId());
             userBean.setAccount(user.getMobile());

@@ -13,6 +13,7 @@
         <module>linjiashop-generator</module>
         <module>linjiashop-mobile-api</module>
         <module>linjiashop-admin-api</module>
+        <module>linjiashop-api</module>
     </modules>
 
     <properties>
