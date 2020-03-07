@@ -25,8 +25,9 @@ public class WeChatController {
                            @RequestParam(value = "timestamp") String timestamp,
                            @RequestParam(value = "nonce") String nonce,
                            @RequestParam(value = "echostr") String echostr) {
+        log.info("微信进行签名的验证 signature:{}, timestamp:{}, nonce:{}, echostr:{}", signature, timestamp, nonce, echostr);
         String s = SignatureUtil.check(signature, timestamp, nonce) ? echostr : null;
-        log.info("微信进行签名的验证 signature:{}, timestamp:{}, nonce:{}, echostr:{}, s:{}", signature, timestamp, nonce, echostr, s);
+        log.info("微信进行签名的验证 s:{}", s);
         return s;
     }
 }
