@@ -70,10 +70,18 @@ public class ShiroConfig {
         filterRuleMap.put("/configuration/ui","anon");
         //druid监控地址不拦截
         filterRuleMap.put("/druid/**","anon");
+        //http测试不进行
+        filterRuleMap.put("/hello","anon");
+        //微信授权不进行
+        filterRuleMap.put("/wechat/sign","anon");
+
+        filterRuleMap.put("/user/**", "jwt");
+        filterRuleMap.put("/logout", "logout");
 
         //系统图片资源不拦截
         filterRuleMap.put("/file/getImgStream","anon");
         filterRuleMap.put("/file/download","anon");
+        filterRuleMap.put("/file/upload/**","jwt");
 
         filterRuleMap.put("/account/logout", "logout");
 
