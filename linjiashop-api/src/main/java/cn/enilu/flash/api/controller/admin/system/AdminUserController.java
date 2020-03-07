@@ -14,6 +14,10 @@ import cn.enilu.flash.bean.vo.front.Rets;
 import cn.enilu.flash.bean.vo.query.SearchFilter;
 import cn.enilu.flash.core.factory.UserFactory;
 import cn.enilu.flash.service.system.ManagerService;
+import cn.enilu.flash.utils.BeanUtil;
+import cn.enilu.flash.utils.MD5;
+import cn.enilu.flash.utils.RandomUtil;
+import cn.enilu.flash.utils.StringUtil;
 import cn.enilu.flash.utils.factory.Page;
 import cn.enilu.flash.warpper.UserWarpper;
 import cn.enilu.flash.web.controller.BaseController;
@@ -36,7 +40,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/user")
-public class UserController extends BaseController {
+public class AdminUserController extends BaseController {
     @Autowired
     private ManagerService managerService;
     @RequestMapping(value = "/list",method = RequestMethod.GET)

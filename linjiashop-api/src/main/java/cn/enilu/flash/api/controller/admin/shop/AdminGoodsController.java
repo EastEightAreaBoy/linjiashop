@@ -17,13 +17,14 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 @RequestMapping("/shop/goods")
-public class GoodsController {
+public class AdminGoodsController {
 	private  Logger logger = LoggerFactory.getLogger(getClass());
 	@Autowired
 	private GoodsService goodsService;
@@ -97,7 +98,7 @@ public class GoodsController {
 	}
 	@RequestMapping(value="/changeIsOnSale",method = RequestMethod.POST)
 	@RequiresPermissions(value = {Permission.GOODS_EDIT})
-	public Object changeIsOnSale(@RequestParam("id")  Long id,@RequestParam("isOnSale") Boolean isOnSale){
+	public Object changeIsOnSale(@RequestParam("id")  Long id, @RequestParam("isOnSale") Boolean isOnSale){
 		if (id == null) {
 			throw new ApplicationException(BizExceptionEnum.REQUEST_NULL);
 		}

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/shop/favorite")
-public class FavoriteController {
+public class AdminFavoriteController {
 	private  Logger logger = LoggerFactory.getLogger(getClass());
 	@Autowired
 	private FavoriteService favoriteService;

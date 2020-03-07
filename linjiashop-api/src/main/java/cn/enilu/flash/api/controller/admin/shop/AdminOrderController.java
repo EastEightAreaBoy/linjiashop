@@ -21,6 +21,7 @@ import cn.enilu.flash.utils.factory.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -29,7 +30,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/shop/order")
-public class OrderController {
+public class AdminOrderController {
     private Logger logger = LoggerFactory.getLogger(getClass());
     @Autowired
     private OrderService orderService;

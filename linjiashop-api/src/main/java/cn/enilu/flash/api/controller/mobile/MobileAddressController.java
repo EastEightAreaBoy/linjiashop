@@ -18,7 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/user/address")
-public class AddressController extends BaseController {
+public class MobileAddressController extends BaseController {
     @Autowired
     private AddressService addressService;
     @RequestMapping(value = "{id}",method = RequestMethod.GET)

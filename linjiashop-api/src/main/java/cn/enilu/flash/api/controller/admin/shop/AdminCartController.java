@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/shop/cart")
-public class CartController {
+public class AdminCartController {
 	private  Logger logger = LoggerFactory.getLogger(getClass());
 	@Autowired
 	private CartService cartService;

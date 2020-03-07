@@ -24,7 +24,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/category")
-public class CategoryController extends BaseController {
+public class MobileCategoryController extends BaseController {
     private Logger logger = LoggerFactory.getLogger(getClass());
     @Autowired
     private CategoryService categoryService;

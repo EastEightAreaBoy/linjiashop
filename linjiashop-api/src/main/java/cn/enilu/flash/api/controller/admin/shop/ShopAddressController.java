@@ -12,10 +12,11 @@ import cn.enilu.flash.utils.factory.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/shop/address")
-public class AddressController {
+public class ShopAddressController {
 	private  Logger logger = LoggerFactory.getLogger(getClass());
 	@Autowired
 	private AddressService addressService;

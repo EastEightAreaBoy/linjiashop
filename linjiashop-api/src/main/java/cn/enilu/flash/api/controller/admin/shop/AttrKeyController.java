@@ -13,6 +13,7 @@ import cn.enilu.flash.utils.factory.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/shop/goods/attr/key")
@@ -52,7 +53,7 @@ public class AttrKeyController {
 	}
 	@RequestMapping(value="updateAttrName",method = RequestMethod.POST)
 	@BussinessLog(value = "修改商品属性名", key = "id",dict= CommonDict.class)
-	public Object updateAttrName(@RequestParam("id") Long id,@RequestParam("attrName") String attrName){
+	public Object updateAttrName(@RequestParam("id") Long id, @RequestParam("attrName") String attrName){
 		if (StringUtil.isEmpty(id)) {
 			throw new ApplicationException(BizExceptionEnum.REQUEST_NULL);
 		}
