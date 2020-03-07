@@ -23,43 +23,43 @@ import java.io.*;
 //@RestController
 //@RequestMapping("/file")
 public class MobileFileController extends BaseController {
-    @Autowired
-    private static  final Logger logger = LoggerFactory.getLogger(MobileFileController.class);
-    @Autowired
-    private FileService fileService;
-    @Autowired
-    private ShopUserService shopUserService;
-
-    /**
-     * 上传文件
-     * @param multipartFile
-     * @return
-     */
-    @RequestMapping(value="upload",method = RequestMethod.POST)
-    public Object upload(@RequestPart("file") MultipartFile multipartFile) {
-
-        try {
-            FileInfo fileInfo = fileService.upload(multipartFile);
-            return Rets.success(fileInfo);
-        } catch (Exception e) {
-            logger.error("上传文件异常",e);
-            return Rets.failure("上传文件失败");
-        }
-    }
-    @RequestMapping(value = "upload/base64",method = RequestMethod.POST)
-    public Object uploadUploadFileBase64(@RequestBody Base64File base64File) {
-
-        try {
-            FileInfo fileInfo = fileService.upload(base64File);
-            ShopUser user = shopUserService.getCurrentUser();
-            user.setAvatar(String.valueOf(fileInfo.getRealFileName()));
-            shopUserService.update(user);
-            return Rets.success(user);
-        } catch (Exception e) {
-            logger.error("上传文件异常",e);
-            return Rets.failure("上传文件失败");
-        }
-    }
+//    @Autowired
+//    private static  final Logger logger = LoggerFactory.getLogger(MobileFileController.class);
+//    @Autowired
+//    private FileService fileService;
+//    @Autowired
+//    private ShopUserService shopUserService;
+//
+//    /**
+//     * 上传文件
+//     * @param multipartFile
+//     * @return
+//     */
+//    @RequestMapping(value="upload",method = RequestMethod.POST)
+//    public Object upload(@RequestPart("file") MultipartFile multipartFile) {
+//
+//        try {
+//            FileInfo fileInfo = fileService.upload(multipartFile);
+//            return Rets.success(fileInfo);
+//        } catch (Exception e) {
+//            logger.error("上传文件异常",e);
+//            return Rets.failure("上传文件失败");
+//        }
+//    }
+//    @RequestMapping(value = "upload/base64",method = RequestMethod.POST)
+//    public Object uploadUploadFileBase64(@RequestBody Base64File base64File) {
+//
+//        try {
+//            FileInfo fileInfo = fileService.upload(base64File);
+//            ShopUser user = shopUserService.getCurrentUser();
+//            user.setAvatar(String.valueOf(fileInfo.getRealFileName()));
+//            shopUserService.update(user);
+//            return Rets.success(user);
+//        } catch (Exception e) {
+//            logger.error("上传文件异常",e);
+//            return Rets.failure("上传文件失败");
+//        }
+//    }
 
 //    /**
 //     * 下载文件
