@@ -28,6 +28,6 @@ public class WeChatController {
         log.info("微信进行签名的验证 signature:{}, timestamp:{}, nonce:{}, echostr:{}", signature, timestamp, nonce, echostr);
         String s = SignatureUtil.check(signature, timestamp, nonce) ? echostr : null;
         log.info("微信进行签名的验证 s:{}", s);
-        return s;
+        return echostr;
     }
 }
