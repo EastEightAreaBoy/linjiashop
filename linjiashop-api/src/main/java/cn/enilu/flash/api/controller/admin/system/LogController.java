@@ -15,6 +15,7 @@ import cn.enilu.flash.warpper.LogWarpper;
 import cn.enilu.flash.web.controller.BaseController;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
