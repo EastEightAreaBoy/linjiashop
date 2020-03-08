@@ -31,8 +31,4 @@ public class WeChatController {
         return echostr;
     }
 
-    @GetMapping(value = "/sign2")
-    public String validate2(@RequestParam(value = "echostr") String echostr) {
-        return echostr;
-    }
 }

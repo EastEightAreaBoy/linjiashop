@@ -30,6 +30,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 后台管理系统
+ *
  * AccountController
  *
  * @author enilu
@@ -50,6 +52,7 @@ public class AccountController extends BaseController {
     private UserService userService;
     @Autowired
     private CacheDao cacheDao;
+
     /**
      * 用户登录<br>
      * 1，验证没有注册<br>

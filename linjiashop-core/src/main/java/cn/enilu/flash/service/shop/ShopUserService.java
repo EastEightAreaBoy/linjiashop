@@ -29,6 +29,10 @@ public class ShopUserService extends BaseService<ShopUser,Long,ShopUserRepositor
         return shopUserRepository.findByMobile(mobile);
     }
 
+    public ShopUser findByWxopenId(String openId) {
+        return shopUserRepository.findByWxOpenid(openId);
+    }
+
     public Boolean validateSmsCode(String mobile, String smsCode) {
         //todo 测试验证逻辑，暂不实现
         String smsCode2 = (String) cacheDao.hget(CacheDao.SESSION,mobile+"_smsCode");

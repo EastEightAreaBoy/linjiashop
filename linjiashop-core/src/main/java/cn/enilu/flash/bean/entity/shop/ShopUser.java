@@ -39,5 +39,14 @@ public class ShopUser  implements Serializable {
     private String gender;
     @Column(columnDefinition = "DATETIME COMMENT '最后登陆时间'")
     private Date lastLoginTime;
+    @Column(columnDefinition = "VARCHAR(80) COMMENT '微信openid'")
+    private String wxOpenid;
+    @Column(columnDefinition = "VARCHAR(45) COMMENT '微信nickname'")
+    private String wxNickname;
+//    @Column(columnDefinition = "DATETIME COMMENT '微信sex值为1时是男性，值为2时是女性，值为0时是未知'")
+//    private String wxSex;
+    @Column(columnDefinition = "VARCHAR(80) COMMENT '微信unionid'")
+    private String wxUnionid;
+
 
 }

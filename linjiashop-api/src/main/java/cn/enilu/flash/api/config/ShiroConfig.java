@@ -74,7 +74,6 @@ public class ShiroConfig {
         filterRuleMap.put("/hello","anon");
         //微信授权不进行
         filterRuleMap.put("/wechat/sign","anon");
-        filterRuleMap.put("/wechat/sign2","anon");
 
         filterRuleMap.put("/user/**", "jwt");
         filterRuleMap.put("/logout", "logout");

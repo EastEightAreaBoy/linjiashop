@@ -20,25 +20,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 前端用户登录
+ *
  * @author ：enilu
  * @date ：Created in 11/4/2019 8:12 PM
  */
-
 @RestController("/shop")
 public class LoginController extends BaseController {
 
     @Value("${jwt.token.expire.time}")
-    private Long tokenExpireTime ;
+    private Long tokenExpireTime;
     @Autowired
     private ShopUserService shopUserService;
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public Object login(@RequestParam("mobile") String mobile,
-                        @RequestParam("password") String password){
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Object login(@RequestParam("mobile") String mobile, @RequestParam("password") String password) {
         try {
             logger.info("用户登录:" + mobile + ",密码:" + password);
             //1,
-            ShopUser user = shopUserService.findByMobile(mobile);
+            ShopUser user = shopUserService.findByWxopenId(mobile);
 
             if (user == null) {
                 return Rets.failure("该用户不存在");
@@ -49,9 +50,9 @@ public class LoginController extends BaseController {
                 return Rets.failure("输入的密码错误");
             }
 
-            String token = JwtUtil.sign(new JwtUser(user),tokenExpireTime);
+            String token = JwtUtil.sign(new JwtUser(user), tokenExpireTime);
             Map<String, String> result = new HashMap<>(1);
-            logger.info("token:{}",token);
+            logger.info("token:{}", token);
             result.put("token", token);
 
             return Rets.success(result);
